@@ -1,4 +1,4 @@
-## imersaoFabrica
+## Imersão Fábrica de Software 2022
 App feito com o framework Django realizado no Desafio da Fábrica de Sotware.
 Esta aplicação possibilita listar seus filmes favoritos, dando o título, classificação e uma categoria, também
 é possível, adicionar, alterar e excluir um dos títulos.
