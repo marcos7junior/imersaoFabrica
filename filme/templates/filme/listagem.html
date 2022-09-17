@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Open Sans',Sans-serif;
+            font-weight: 200;
+            text-transform: uppercase;
+        }
+        a {
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+        }
+        td > a {
+            text-decoration: none;
+        }
+        button {
+            width: 300px;
+            height: 80px;
+            font-size: 24px;
+            border-radius: 10px;
+            opacity: 0.5;
+        }
+        button:hover {
+            opacity: 1;
+        }
+        table {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 60%; 
+            border-collapse: collapse;
+            border-spacing: 0;
+            box-shadow: 0 2px 15px rgba(64,64,64,.7);
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+           }
+           thead {
+            font-weight: 700;
+           }
+           td , th {
+            padding: 15px 20px;
+            text-align: center;
+           }
+           th {
+            background-color: #ba68c8;
+            color: #fafafa;
+            font-family: 'Open Sans',Sans-serif;
+            font-weight: 200;
+            text-transform: uppercase;
+           }
+           tr {
+            width: 100%;
+            background-color: #fafafa;
+            font-family: 'Montserrat', sans-serif;
+           }
+           tr:nth-child(even) {
+            background-color: #eeeeee;
+           }
+    </style>
+
+</head>
+<body>
+    <h1>Lista dos filmes favoritos:</h1>
+    <table>
+        <thead>
+            <td>Nome</td>
+            <td>Categoria</td>
+            <td>Classificacao</td>
+            <td>Modificar</td>
+        </thead>
+        <tbody>
+            {% for lista in listagem %}
+            <tr>
+                <td> {{ lista.nome }} </td>
+                <td> {{ lista.categoria }} </td>
+                <td> {{ lista.classificacao }} </td>
+                <td> <a href="{% url 'update' lista.id %}">Modificar {{lista.nome}}</a> </td>
+            </tr>    
+            {% endfor %} 
+        </tbody>
+    </table>
+
+    <a href="{% url 'novo' %}"><button>Novo Título</button></a>
+</body>
+</html>
