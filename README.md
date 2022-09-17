@@ -1,2 +1,3 @@
-# imersaoFabrica
-Arquivos dos exercícios e projetos executados na Imersão na Fábrica de Software UNIPE - 2022.2
+OBSERVAÇÃO:
+
+Os arquivos do desafio da fábrica de software estão na branch: "DesafioFabricaDeSoftware".
